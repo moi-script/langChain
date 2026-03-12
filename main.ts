@@ -25,9 +25,9 @@ const chatPipeline = traceable(async (question: string) => {
       { role: "user" as const, content: `Question: ${question} Context: ${context}` },
   ];
   const chatCompletion = await client.chat.completions.create({
-      model: "phi3.5:latest",
+      model: "phi3.5:latest",       
       messages: messages,
-  });
+  });   
   return chatCompletion.choices[0]?.message?.content ?? "No response generated";
 }, { name: "Chat Pipeline" });
 
