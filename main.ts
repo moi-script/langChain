@@ -31,4 +31,7 @@ const chatPipeline = traceable(async (question: string) => {
   return chatCompletion.choices[0]?.message?.content ?? "No response generated";
 }, { name: "Chat Pipeline" });
 
+( async () => {
 console.log(await chatPipeline("Can you summarize this morning's meetings?"))   
+
+}) ()
